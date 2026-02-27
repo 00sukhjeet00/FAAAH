@@ -1,81 +1,99 @@
 # FAAAH! - Test Failure Sound 😱
 
+> Because `AssertionError: expected 42 to equal 43` deserves a sound effect.
+
 A VS Code extension that plays a dramatic **FAAAH** sound whenever your test cases fail. Never suffer in silence again.
 
 ---
 
-## Features
+## ✨ Features
 
-- 🔊 Plays a dramatic sliding "FAAAH" sound on test failure
-- 🎯 Works with **Jest, pytest, Mocha, Karma, Vitest**, and any test runner
-- 🔇 Toggle sound on/off via status bar or command palette
-- 🎚️ Configurable volume
-- 📡 Detects failures from:
-  - VS Code task runner (test tasks with non-zero exit codes)
-  - Terminal output pattern matching
-  - VS Code native Test API
-
----
-
-## How It Works
-
-The extension monitors three sources for test failures:
-
-1. **Task Runner** — If a task containing "test", "jest", "pytest", "mocha", "karma", or "spec" in its name exits with a non-zero code → **FAAAH!**
-2. **Terminal Output** — Scans terminal output for patterns like `3 tests failed`, `FAILED`, `✕`, `2 failing`, etc. → **FAAAH!**
-3. **VS Code Test API** — Hooks into the built-in test result state → **FAAAH!**
+- 🔊 Plays a dramatic sliding **FAAAH** sound on test failure
+- 🎯 Works with **Jest, Pytest, Mocha, Karma, Vitest**, and any test runner
+- 🔇 Toggle sound on/off via status bar or Command Palette
+- 🎚️ Adjustable volume (0.1–1.0)
+- 📡 Detects failures from multiple sources:
+  - **Task Runner** — test tasks with non-zero exit codes
+  - **Terminal Output** — pattern matching (`FAILED`, `✕`, `failing`, etc.)
+  - **VS Code Test API** — built-in test result integration
 
 ---
 
-## Installation
+## 📦 Installation
 
-### From source (manual):
+### From VS Code Marketplace
+
+1. Open VS Code
+2. Go to **Extensions** (`Ctrl+Shift+X`)
+3. Search for **"FAAAH"**
+4. Click **Install**
+
+### From Command Line
+
 ```bash
-# Install vsce
-npm install -g @vscode/vsce
-
-# In the extension directory
-vsce package
-
-# Install the generated .vsix
-code --install-extension faaah-test-failure-1.0.0.vsix
+code --install-extension 00sukhjeet00.faaah-test-failure
 ```
 
 ---
 
-## Usage
+## 🚀 Usage
 
-- **Test the sound**: Open Command Palette (`Cmd/Ctrl+Shift+P`) → `FAAAH: Play Test Failure Sound`
-- **Toggle on/off**: Click the `🔊 FAAAH` button in the status bar, or run `FAAAH: Toggle Sound On/Off`
-- **Change volume**: Settings → search "faaah" → adjust volume (0.1–1.0)
-
----
-
-## Settings
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `faaah.enabled` | `true` | Enable/disable the sound |
-| `faaah.volume` | `1.0` | Sound volume (0.1–1.0) |
+| Action             | How                                                                 |
+| ------------------ | ------------------------------------------------------------------- |
+| **Test the sound** | `Ctrl+Shift+P` → `FAAAH: Play Test Failure Sound`                   |
+| **Toggle on/off**  | Click `🔊 FAAAH` in the status bar, or `FAAAH: Toggle Sound On/Off` |
+| **Run tests**      | `Ctrl+Shift+P` → `FAAAH: Run Tests`                                 |
+| **Adjust volume**  | Settings → search `faaah` → set volume (0.1–1.0)                    |
 
 ---
 
-## Platform Support
+## ⚙️ Settings
 
-| Platform | Audio Player Used |
-|----------|------------------|
-| macOS    | `afplay` (built-in) |
-| Windows  | PowerShell `Media.SoundPlayer` |
-| Linux    | `aplay` / `paplay` / `ffplay` |
+| Setting         | Default | Description                    |
+| --------------- | ------- | ------------------------------ |
+| `faaah.enabled` | `true`  | Enable/disable the FAAAH sound |
+| `faaah.volume`  | `1.0`   | Sound volume (0.1–1.0)         |
+
+---
+
+## 🔍 How It Works
+
+The extension monitors **three sources** for test failures:
+
+1. **Task Runner** — If a task containing "test", "jest", "pytest", "mocha", "karma", or "spec" exits with a non-zero code → 💥 **FAAAH!**
+2. **Terminal Output** — Scans for patterns like `3 tests failed`, `FAILED`, `✕`, `2 failing` → 💥 **FAAAH!**
+3. **VS Code Test API** — Hooks into native test results → 💥 **FAAAH!**
+
+---
+
+## 💻 Platform Support
+
+| Platform    | Audio Player                   |
+| ----------- | ------------------------------ |
+| **macOS**   | `afplay` (built-in)            |
+| **Windows** | PowerShell `Media.SoundPlayer` |
+| **Linux**   | `aplay` / `paplay` / `ffplay`  |
 
 > **Linux users**: Make sure `aplay` (ALSA), `paplay` (PulseAudio), or `ffplay` (FFmpeg) is installed.
 
 ---
 
-## Why?
+## 🛠️ Contributing
 
-Because `AssertionError: expected 42 to equal 43` deserves a sound effect.
+Found a bug or want to add a feature? Contributions are welcome!
+
+1. Fork the [repository](https://github.com/00sukhjeet00/FAAAH)
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ---
 
-*Made with ❤️ and suffering*
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+_Made with ❤️ and suffering_
