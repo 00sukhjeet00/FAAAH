@@ -1,0 +1,59 @@
+{
+  "name": "faaah-test-failure",
+  "displayName": "FAAAH! - Test Failure Sound",
+  "description": "Plays a dramatic FAAAH sound when your test cases fail 😱",
+  "version": "1.0.0",
+  "publisher": "00sukhjeet00",
+  "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "license": "MIT",
+  "categories": [
+    "Other",
+    "Testing"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "faaah.testSound",
+        "title": "FAAAH: Play Test Failure Sound"
+      },
+      {
+        "command": "faaah.toggle",
+        "title": "FAAAH: Toggle Sound On/Off"
+      },
+      {
+        "command": "faaah.runTests",
+        "title": "FAAAH: Run Tests"
+      }
+    ],
+    "configuration": {
+      "title": "FAAAH Test Failure Sound",
+      "properties": {
+        "faaah.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable the FAAAH sound on test failure"
+        },
+        "faaah.volume": {
+          "type": "number",
+          "default": 1,
+          "minimum": 0.1,
+          "maximum": 1,
+          "description": "Volume of the FAAAH sound (0.1 - 1.0)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.22.0"
+  }
+}
